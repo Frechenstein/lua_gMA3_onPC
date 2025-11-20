@@ -1,0 +1,16 @@
+-- 00_main
+
+function Main_Z300()
+    local count = UI_ChooseZ300Count()
+    if not count then
+        Printf("Abgebrochen.")
+        return
+    end
+
+    Patch_Z300(count)
+    Group_Z300_All(101, count)   -- z.B. aus einer Utils/Groups-Component
+end
+
+return function()
+    Main_Z300()
+end

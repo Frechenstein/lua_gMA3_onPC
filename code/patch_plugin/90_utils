@@ -1,0 +1,13 @@
+-- 90_utils
+
+function Group_Z300_All(startFID, count)
+    Cmd("ClearAll")
+
+    local lastFID = startFID + count - 1
+    Cmd("Fixture " .. startFID .. " Thru " .. lastFID)
+    Cmd("Store Group 1 /o")
+    Cmd('Label Group 1 "Z300 All"')
+
+    Cmd("ClearAll")
+    Printf("Gruppe 'Z300 All' mit FID " .. startFID .. " Thru " .. lastFID .. " erstellt.")
+end
